@@ -4,7 +4,7 @@ const fn = require('../controllers/repo.js');
 
 const githubUsername = 'gchen1196';
 
-const getGithubRepos = axios.get(`https://api.github.com/users/${githubUsername}/repos`, {
+const githubAPI = axios.get(`https://api.github.com/users/${githubUsername}/repos`, {
   headers: {
     'User-Agent': 'request',
     'Authorization': TOKEN
@@ -15,4 +15,4 @@ const getGithubRepos = axios.get(`https://api.github.com/users/${githubUsername}
   console.log(err);
 })
 
-module.exports = getGithubRepos;
+module.exports = githubAPI;

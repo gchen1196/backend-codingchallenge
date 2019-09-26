@@ -1,7 +1,6 @@
 const Repo = require('../models/repo.js');
 
 const saveRepo = (results) => {
-  console.log(results)
   for (var i = 0; i < results.length; i++) {
     let result = results[i];
     let parsedResult = {
@@ -21,4 +20,10 @@ const saveRepo = (results) => {
   }
 }
 
-module.exports = {saveRepo};
+const getRepos = async () => {
+  let repo = await Repo.findAll();
+  console.log('ran')
+  return repo; 
+}
+
+module.exports = {saveRepo, getRepos};
