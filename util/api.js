@@ -1,5 +1,5 @@
 const axios = require('axios');
-const TOKEN = require('./config.js');
+const TOKEN = require('../config.js');
 const fn = require('../controllers/repo.js');
 
 const githubUsername = 'Facebook';
