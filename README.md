@@ -20,8 +20,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
 
 ## Run Project
 
-1. Create a Personal Token on Github 
-  * https://github.com/settings/tokens
+1. Create a Personal Token on Github: https://github.com/settings/tokens
 1. Add Personal Token in **config.example.js** file 
 1. Rename **config.example.js** file to **config.js**
 1. Install dependencies: 
