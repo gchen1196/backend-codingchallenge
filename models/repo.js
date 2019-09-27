@@ -10,6 +10,7 @@ const Repo = sequelize.define('repo', {
   name: {
     type: Sequelize.STRING,
     notContains: ' ',
+    allowNull: false 
   },
   description: {
     type: Sequelize.STRING
@@ -18,7 +19,10 @@ const Repo = sequelize.define('repo', {
     type: Sequelize.STRING
   },
   forks: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    isPositive(value) {
+      if (value < 0) throw new Error('Only positive forks allowed');
+    } 
   }
 })
 
