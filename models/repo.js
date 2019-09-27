@@ -8,7 +8,8 @@ const Repo = sequelize.define('repo', {
     primaryKey: true
   },
   name: {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    notContains: ' ',
   },
   description: {
     type: Sequelize.STRING

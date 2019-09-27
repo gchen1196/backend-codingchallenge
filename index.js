@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
-const port = 3005;
 const Repo = require('./models/repo.js');
 const githubAPI = require('./util/api.js');
 const fn = require('./controllers/repo.js');
+
+const app = express();
+
+const port = 3005;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -16,7 +18,7 @@ app.get('/', async (req, res) => {
     res.status(200).send(repos); 
   }
   catch (err) {
-    res.status(400).send(err);
+    res.status(404).send(console.log('failed to get repos'));
   }
 })
 
@@ -26,11 +28,12 @@ app.put('/repo', async (req, res) => {
     const id = req.query;
     const updateData = req.body;
     await fn.updateRepo(id, updateData);
-    res.redirect('/');
+    let updatedRepo = await fn.searchOrGetAllRepos(id);
+    res.status(201).send(updatedRepo);
 
   }
   catch (err) {
-    res.status(400).send(err)
+    res.status(400).send(console.log('failed to update repo'))
   }
 })
 
