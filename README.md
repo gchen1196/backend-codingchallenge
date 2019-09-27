@@ -48,6 +48,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
 | name | type | description |
 | --- | --- | --- |
 | repos | Array | Array of [Repo Objects](#Repo-Object) |
+#### Reponse (404)
 
 ### Search for Repos by parameters
 #### Endpoint
