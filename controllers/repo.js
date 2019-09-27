@@ -1,6 +1,6 @@
 const Repo = require('../models/repo.js');
 
-const saveRepo = async (results) => {
+const saveRepo = async results => {
   try {
     if (results.length === 0) throw new Error('no repos to save');
     await Repo.bulkCreate(results);
@@ -13,7 +13,7 @@ const saveRepo = async (results) => {
 
 }
 
-const searchOrGetAllRepos = async (queries) => {
+const searchOrGetAllRepos = async queries => {
   try {
     let repos = await Repo.findAll({
       where: queries

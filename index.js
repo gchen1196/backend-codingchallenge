@@ -9,11 +9,8 @@ const fn = require('./controllers/repo.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-//make http request to github to grab list of repos
-//iterate through the data and save each Repo to db
 
-
-//create GET request endpoint to retrieve all Repos
+//GET request endpoint to retrieve all Repos or searched Repo
 app.get('/', async (req, res) => {
   try {
     const searchParam = req.query;
@@ -25,7 +22,7 @@ app.get('/', async (req, res) => {
   }
 })
 
-//update a repo 
+//dynamically update a repo 
 app.put('/repo', async (req, res) => {
   try {
     const id = req.query;
