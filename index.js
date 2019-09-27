@@ -14,9 +14,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 //create GET request endpoint to retrieve all Repos
-app.get('/repos', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
-    let repos = await fn.searchOrGetAllRepos(req.query);
+    const searchParam = req.query;
+    let repos = await fn.searchOrGetAllRepos(searchParam);
     res.status(200).send(repos); 
   }
   catch (err) {
@@ -24,17 +25,19 @@ app.get('/repos', async (req, res) => {
   }
 })
 
-//create GET request endpoint to retrieve filtered parameters (include a search paramater)
-//search by repo name 
-//search by language
-// app.get('/repos/search', async (req, res) => {
-//   try {
-//     console.log(req.body);
-//   }
-//   catch (err) {
-//     console.log(err);
-//   }
-// })
+//update a repo 
+app.put('/repo', async (req, res) => {
+  try {
+    const id = req.query;
+    const updateData = req.body;
+    await fn.updateRepo(id, updateData);
+    res.redirect('/');
+
+  }
+  catch (err) {
+    res.status(400).send(err)
+  }
+})
 
 
 const main = async () => {
