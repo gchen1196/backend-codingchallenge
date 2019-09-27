@@ -16,7 +16,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
 1. Connect to local PostgreSQL shell
   * `psql`
 1. Create database in PostgreSQL shell 
-  * `CREATE DATASE backend_codingchallenge;`
+  * `CREATE DATABASE backend_codingchallenge;`
 
 ## Run Project
 
