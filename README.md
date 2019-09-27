@@ -18,7 +18,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
 ## API Documentation 
 
 ### GET: localhost:3005/ 
-  - Retrieves all repos 
+  - **Retrieves all repos**
   - Parameters: none
   - Response (200): 
     [
@@ -44,7 +44,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
   - Reponse (400)
 
 ### GET: localhost:3005/?param=
-  - Search for a Repos by parameters
+  - **Search for a Repos by parameters**
   - Parameters:
     - name: name of the repo (String) ex. ToDoList
     - language: the language of the repo (String) ex. JavaScript
@@ -73,7 +73,7 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
   - Response (400)
 
 ### PUT: localhost:3005/repo/?id=
-  - Dynamically update a Repo by ID
+  - **Dynamically update a Repo by ID**
   - Parameters: 
     - id: id of the Repo (INTEGER) ex.124325
   - Request (Body): 
