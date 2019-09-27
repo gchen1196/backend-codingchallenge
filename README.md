@@ -1,4 +1,4 @@
-# BackEnd Coding Challenge
+# Backend Coding Challenge
 
 ## About
 A RESTful API for a User's Github Repos 
