@@ -9,8 +9,6 @@ const fn = require('./controllers/repo.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-//GET request endpoint to retrieve all Repos or searched Repo
 app.get('/', async (req, res) => {
   try {
     const searchParam = req.query;
@@ -22,7 +20,7 @@ app.get('/', async (req, res) => {
   }
 })
 
-//dynamically update a repo 
+
 app.put('/repo', async (req, res) => {
   try {
     const id = req.query;
