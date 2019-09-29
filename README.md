@@ -81,5 +81,5 @@ Node.js, Express, PostgreSQL, Sequelize, Axios
 #### Response (201)
 | name | type | description |
 | --- | --- | --- |
-| repo | Object | Updated [Repo Object](#Repo-Object) |
+| repo | Array of Object | Updated [Repo Object](#Repo-Object) |
 #### Response (400)
